@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Watch - Đồng hồ đeo tay</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+/* HEADER */
+header {
+    background: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #b8860b;
+}
+
+nav a {
+    text-decoration: none;
+    color: #334155;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #b8860b;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background: linear-gradient(120deg, #fefce8, #fef3c7);
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content h1 span {
+    color: #b8860b;
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: #475569;
+}
+
+.hero img {
+    width: 42%;
+    max-width: 450px;
+    border-radius: 25px;
+    object-fit: cover;
+    box-shadow: 0 15px 35px #94a3b8;
+}
+
+.btn {
+    display: inline-block;
+    background: #b8860b;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #926b08;
+    transform: translateY(-3px);
+}
+
+/* GENERAL SECTION */
+section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    color: #64748b;
+}
+
+/* FEATURES */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px #e2e8f0;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+}
+
+.feature-card .icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* PRODUCT */
+.product {
+    background: #fefce8;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.product img {
+    width: 40%;
+    max-width: 400px;
+    border-radius: 20px;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-info h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.price {
+    color: #dc2626;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.old-price {
+    color: #94a3b8;
+    text-decoration: line-through;
+    font-size: 18px;
+}
+
+/* TESTIMONIAL */
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.review {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px #e2e8f0;
+}
+
+.review p {
+    line-height: 1.7;
+    color: #475569;
+    margin-bottom: 15px;
+}
+
+.stars {
+    color: #f59e0b;
+    margin-bottom: 12px;
+}
+
+/* CONTACT */
+.contact {
+    background: #292524;
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    margin-bottom: 25px;
+}
+
+.contact form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.contact button {
+    background: #f59e0b;
+    color: #1e293b;
+    width: 100%;
+}
+
+.contact button:hover {
+    background: #fbbf24;
+}
+
+/* FOOTER */
+footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero, .product {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+    .hero img, .product img {
+        width: 100%;
+    }
+
+    .features, .testimonials {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">Luxury Watch</div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <nav id="menu">
+        <a href="#home">Trang chủ</a>
+        <a href="#features">Đặc điểm</a>
+        <a href="#product">Sản phẩm</a>
+        <a href="#reviews">Đánh giá</a>
+        <a href="#contact">Liên hệ</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero" id="home">
+
+    <div class="hero-content">
+        <h1>Khẳng định phong cách<br>
+        <span>Luxury Watch</span></h1>
+
+        <p>
+            Đồng hồ đeo tay cao cấp với thiết kế sang trọng,
+            tinh tế và hiện đại. Không chỉ giúp bạn quản lý
+            thời gian mà còn thể hiện phong cách riêng
+            trong mọi khoảnh khắc.
+        </p>
+
+        <a href="#product" class="btn">Khám phá ngay</a>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800"
+         alt="Đồng hồ đeo tay">
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+
+    <div class="section-title">
+        <h2>Đặc điểm nổi bật</h2>
+        <p>Sự kết hợp hoàn hảo giữa chất lượng và phong cách</p>
+    </div>
+
+    <div class="features">
+
+        <div class="feature-card">
+            <div class="icon">⌚</div>
+            <h3>Thiết kế sang trọng</h3>
+            <p>
+                Kiểu dáng tinh tế, hiện đại,
+                phù hợp với nhiều phong cách thời trang.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">💎</div>
+            <h3>Chất liệu cao cấp</h3>
+            <p>
+                Sử dụng chất liệu bền đẹp,
+                mang lại cảm giác thoải mái khi đeo.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">⏱️</div>
+            <h3>Hiển thị chính xác</h3>
+            <p>
+                Bộ máy hoạt động ổn định,
+                giúp bạn theo dõi thời gian dễ dàng.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PRODUCT -->
+<section class="product" id="product">
+
+    <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800"
+         alt="Luxury Watch">
+
+    <div class="product-info">
+        <h2>Luxury Watch Premium</h2>
+
+        <p>
+            Sở hữu thiết kế thanh lịch với mặt đồng hồ
+            nổi bật, dây đeo chắc chắn và kiểu dáng
+            phù hợp cho cả đi học, đi làm và dự tiệc.
+            Đây là lựa chọn dành cho những người yêu thích
+            sự đơn giản nhưng vẫn sang trọng.
+        </p>
+
+        <div class="price">
+            1.590.000đ
+            <span class="old-price">2.290.000đ</span>
+        </div>
+
+        <p>🎁 Ưu đãi giảm giá trong chương trình ra mắt.</p>
+
+        <br>
+
+        <a href="#contact" class="btn">Đặt hàng ngay</a>
+    </div>
+
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+
+    <div class="section-title">
+        <h2>Khách hàng nói gì?</h2>
+        <p>Những đánh giá về sản phẩm Luxury Watch</p>
+    </div>
+
+    <div class="testimonials">
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+                "Đồng hồ rất đẹp, kiểu dáng sang trọng
+                và dễ phối với nhiều loại trang phục."
+            </p>
+            <b>Nguyễn Minh Anh</b>
+        </div>
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+                "Chất lượng tốt, thiết kế đẹp,
+                giá cả hợp lý. Tôi rất hài lòng."
+            </p>
+            <b>Trần Hoàng Nam</b>
+        </div>
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>
+                "Tôi thường xuyên sử dụng chiếc đồng hồ này
+                khi đi làm và đi chơi. Rất đáng trải nghiệm."
+            </p>
+            <b>Lê Thu Hà</b>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <h2>Đăng ký nhận tư vấn</h2>
+
+    <p>
+        Để lại thông tin, chúng tôi sẽ liên hệ với bạn.
+    </p>
+
+    <form onsubmit="submitForm(event)">
+
+        <input type="text" id="name"
+               placeholder="Họ và tên" required>
+
+        <input type="tel" id="phone"
+               placeholder="Số điện thoại" required>
+
+        <input type="email" id="email"
+               placeholder="Email của bạn" required>
+
+        <button type="submit" class="btn">
+            Gửi thông tin
+        </button>
+
+    </form>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Luxury Watch. All rights reserved.</p>
+    <p>Hotline: 0988 123 456 | Email: support@example.com</p>
+</footer>
+
+<script>
+
+// Hiển thị hoặc ẩn menu trên điện thoại
+function toggleMenu() {
+    document.getElementById("menu")
+        .classList.toggle("active");
+}
+
+// Xử lý form đăng ký
+function submitForm(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let email = document.getElementById("email").value;
+
+    alert(
+        "Đăng ký thành công!\n" +
+        "Họ tên: " + name +
+        "\nĐiện thoại: " + phone +
+        "\nEmail: " + email
+    );
+
+    event.target.reset();
+}
+
+</script>
+
+</body>
+</html>
